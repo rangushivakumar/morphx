@@ -10,7 +10,11 @@ export default function ContactPage() {
       <Navigation />
       <main>
         <ContactHero />
-        <section className="py-24 lg:py-32">
+        <section className="relative py-24 lg:py-32 overflow-hidden bg-background">
+          {/* Subtle decorative background blobs */}
+          <div className="absolute top-1/4 left-[10%] w-96 h-96 rounded-full bg-primary/5 blur-3xl -z-10 pointer-events-none" />
+          <div className="absolute bottom-1/4 right-[10%] w-96 h-96 rounded-full bg-primary/5 blur-3xl -z-10 pointer-events-none" />
+
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <ContactForm />
@@ -23,3 +27,4 @@ export default function ContactPage() {
     </>
   )
 }
+

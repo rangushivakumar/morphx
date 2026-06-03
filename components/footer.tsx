@@ -9,10 +9,9 @@ const quickLinks = [
 ]
 
 const products = [
-  { label: "Hospitality Furniture", href: "/products#hospitality" },
-  { label: "Restaurant Furniture", href: "/products#restaurant" },
-  { label: "Cabinets", href: "/products#cabinets" },
-  { label: "Countertops", href: "/products#countertops" },
+  { label: "Hospital Furniture", href: "/products#hospital-furniture" },
+  { label: "Restaurant Furniture", href: "/products#restaurant-furniture" },
+  { label: "Cabinets & Countertops", href: "/products#cabinets-countertops" },
 ]
 
 export function Footer() {

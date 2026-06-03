@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { HOME_HERO_IMAGE } from "@/lib/home-images"
 
 export function HeroSection() {
   return (
@@ -11,7 +12,7 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=2920&auto=format&fit=crop"
+          src={HOME_HERO_IMAGE}
           alt="Modern commercial interior"
           fill
           className="object-cover"
