@@ -1,3 +1,7 @@
+"use client"
+
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal"
+
 const steps = [
   {
     step: "01",
@@ -26,39 +30,41 @@ export function HowItWorks() {
     <section className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">
             How It Works
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-foreground text-balance">
             From concept to completion
           </h2>
-        </div>
+        </ScrollReveal>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" staggerDelay={0.15}>
           {steps.map((item, index) => (
-            <div key={item.step} className="relative">
-              {/* Connector Line */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-border -translate-x-4" />
-              )}
+            <StaggerItem key={item.step}>
+              <div className="relative group">
+                {/* Connector Line */}
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-border -translate-x-4" />
+                )}
 
-              {/* Step Number */}
-              <div className="w-16 h-16 flex items-center justify-center bg-primary text-primary-foreground font-serif text-xl font-medium mb-6">
-                {item.step}
+                {/* Step Number */}
+                <div className="w-16 h-16 flex items-center justify-center bg-primary text-primary-foreground font-serif text-xl font-medium mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {item.step}
+                </div>
+
+                {/* Content */}
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-
-              {/* Content */}
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {item.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {item.description}
-              </p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

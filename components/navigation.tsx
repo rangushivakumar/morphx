@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -17,9 +17,25 @@ const navItems = [
 export function Navigation() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b transition-all duration-300",
+        isScrolled 
+          ? "border-border shadow-md" 
+          : "border-transparent"
+      )}
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -38,20 +54,26 @@ export function Navigation() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
+                  "text-sm font-medium transition-colors hover:text-primary relative",
                   pathname === item.href
                     ? "text-primary"
                     : "text-muted-foreground"
                 )}
               >
                 {item.label}
+                {pathname === item.href && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary" />
+                )}
               </Link>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button 
+              asChild 
+              className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-200"
+            >
               <Link href="/contact">Get a Quote</Link>
             </Button>
           </div>

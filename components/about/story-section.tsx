@@ -1,4 +1,7 @@
+"use client"
+
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export function StorySection() {
   return (
@@ -6,17 +9,28 @@ export function StorySection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
-          <div className="relative aspect-[4/3] bg-muted overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="relative aspect-[4/3] bg-muted overflow-hidden group"
+          >
             <Image
-              src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2071&auto=format&fit=crop"
-              alt="MorphX workshop"
+              src="/images/craftsmanship.png"
+              alt="MorphX craftsman at work"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-          </div>
+          </motion.div>
 
           {/* Content */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">
               Our Story
             </p>
@@ -31,7 +45,7 @@ export function StorySection() {
                 From a single hotel room set to a full restaurant fit-out, we handle every material — furniture, cabinetry, countertops, flooring, lighting, and more.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

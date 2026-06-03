@@ -3,6 +3,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { motion } from "framer-motion"
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal"
 
 const categories = [
   {
@@ -33,7 +35,7 @@ export function ProductCategories() {
     <section className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+        <ScrollReveal className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div className="max-w-2xl">
             <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">
               Our Collections
@@ -49,45 +51,46 @@ export function ProductCategories() {
             View All Products
             <ArrowRight className="h-4 w-4" />
           </Link>
-        </div>
+        </ScrollReveal>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-6" staggerDelay={0.15}>
           {categories.map((category) => (
-            <Link
-              key={category.id}
-              href={category.href}
-              className="group relative aspect-[3/4] overflow-hidden bg-muted"
-            >
-              {/* Image */}
-              <Image
-                src={category.image}
-                alt={category.title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+            <StaggerItem key={category.id}>
+              <Link
+                href={category.href}
+                className="group relative aspect-[3/4] overflow-hidden bg-muted block"
+              >
+                {/* Image */}
+                <Image
+                  src={category.image}
+                  alt={category.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
 
-              {/* Content */}
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <h3 className="text-2xl lg:text-3xl font-serif font-medium text-primary-foreground mb-3">
-                  {category.title}
-                </h3>
-                <p className="text-sm text-primary-foreground/80 max-w-sm mb-4">
-                  {category.description}
-                </p>
+                {/* Content */}
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <h3 className="text-2xl lg:text-3xl font-serif font-medium text-primary-foreground mb-3">
+                    {category.title}
+                  </h3>
+                  <p className="text-sm text-primary-foreground/80 max-w-sm mb-4">
+                    {category.description}
+                  </p>
 
-                {/* CTA */}
-                <div className="flex items-center gap-2 text-primary-foreground">
-                  <span className="text-sm font-medium">Explore Collection</span>
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
+                  {/* CTA */}
+                  <div className="flex items-center gap-2 text-primary-foreground">
+                    <span className="text-sm font-medium">Explore Collection</span>
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { SubcategoryPills } from "./subcategory-pills"
 
@@ -56,24 +58,19 @@ function StyleCard({
   options: string[]
 }) {
   return (
-    <div className="bg-card border border-border overflow-hidden hover:border-primary/30 transition-colors">
-      {/* Image Placeholder */}
-      <div className="aspect-[16/9] bg-muted flex items-center justify-center">
-        <div className="w-20 h-20 border-2 border-border rounded-lg flex items-center justify-center">
-          <svg
-            className="w-10 h-10 text-muted-foreground/50"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
-          </svg>
-        </div>
+    <motion.div
+      className="bg-card border border-border overflow-hidden hover:border-primary/30 transition-colors"
+      whileHover={{ y: -4, boxShadow: "0 12px 24px -8px rgba(0, 0, 0, 0.1)" }}
+      transition={{ duration: 0.2 }}
+    >
+      {/* Cabinet Image */}
+      <div className="aspect-[16/9] bg-muted relative overflow-hidden group">
+        <Image
+          src="/images/products/cabinet-shaker.png"
+          alt={name}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
+        />
       </div>
       <div className="p-6">
         <h3 className="text-lg font-semibold text-foreground mb-2">{name}</h3>
@@ -94,19 +91,26 @@ function StyleCard({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
 // Quartz Card Component
 function QuartzCard({ name }: { name: string }) {
   return (
-    <div className="bg-card border border-border overflow-hidden hover:border-primary/30 transition-colors">
-      {/* Swatch Placeholder */}
-      <div className="aspect-square bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
-        <span className="text-xs text-muted-foreground/50 uppercase tracking-wider">
-          Swatch
-        </span>
+    <motion.div
+      className="bg-card border border-border overflow-hidden hover:border-primary/30 transition-colors"
+      whileHover={{ y: -4, boxShadow: "0 12px 24px -8px rgba(0, 0, 0, 0.1)" }}
+      transition={{ duration: 0.2 }}
+    >
+      {/* Quartz Image */}
+      <div className="aspect-square relative overflow-hidden group">
+        <Image
+          src="/images/products/quartz-countertop.png"
+          alt={name}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
+        />
       </div>
       <div className="p-4">
         <h3 className="text-sm font-semibold text-foreground mb-3">{name}</h3>
@@ -119,32 +123,29 @@ function QuartzCard({ name }: { name: string }) {
           </span>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
 // Hardware Card Component
 function HardwareCard({ name }: { name: string }) {
   return (
-    <div className="bg-card border border-border p-4 hover:border-primary/30 transition-colors text-center">
-      {/* Image Placeholder */}
-      <div className="aspect-square bg-muted rounded-lg flex items-center justify-center mb-3">
-        <svg
-          className="w-8 h-8 text-muted-foreground/50"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-          />
-        </svg>
+    <motion.div
+      className="bg-card border border-border p-4 hover:border-primary/30 transition-colors text-center"
+      whileHover={{ y: -4, boxShadow: "0 12px 24px -8px rgba(0, 0, 0, 0.1)" }}
+      transition={{ duration: 0.2 }}
+    >
+      {/* Hardware Image */}
+      <div className="aspect-square relative overflow-hidden rounded-lg mb-3 group">
+        <Image
+          src="/images/products/hardware-handle.png"
+          alt={name}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
+        />
       </div>
       <h3 className="text-sm font-medium text-foreground">{name}</h3>
-    </div>
+    </motion.div>
   )
 }
 
