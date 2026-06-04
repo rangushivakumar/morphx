@@ -15,8 +15,8 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'MorphX | Premium Commercial Furniture & Surfaces',
-  description: 'MorphX is a leading manufacturer and supplier of hospital furniture, restaurant furniture, custom cabinets, and premium countertops. Quality craftsmanship for commercial projects.',
-  keywords: ['hospital furniture', 'restaurant furniture', 'commercial cabinets', 'countertops', 'custom manufacturing', 'B2B furniture'],
+  description: 'MorphX is a leading manufacturer and supplier of hospitality furniture, restaurant furniture, custom cabinets, and premium countertops. Quality craftsmanship for commercial projects.',
+  keywords: ['hospitality furniture', 'restaurant furniture', 'commercial cabinets', 'countertops', 'custom manufacturing', 'B2B furniture'],
 }
 
 export default function RootLayout({

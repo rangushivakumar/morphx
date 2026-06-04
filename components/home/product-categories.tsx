@@ -6,25 +6,25 @@ import { ArrowRight } from "lucide-react"
 
 const categories = [
   {
-    id: "hospital",
-    title: "Hospital Furniture",
+    id: "hospitality",
+    title: "Hospitality Furniture",
     description: "Clinical ICU beds, bedside lockers, adjustable overbed tables, and diagnostic examination seating.",
     image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop",
-    href: "/products#hospital-furniture",
+    href: "/products#product-catalog",
   },
   {
     id: "restaurant",
     title: "Restaurant Furniture",
     description: "Dining chairs, bar stools, booth seating, solid wood & stone tables",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
-    href: "/products#restaurant-furniture",
+    href: "/products#product-catalog",
   },
   {
     id: "cabinets",
     title: "Cabinets & Countertops",
     description: "Kitchen, bathroom, office & closet cabinetry with quartz countertops",
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1200&auto=format&fit=crop",
-    href: "/products#cabinets-countertops",
+    href: "/products#product-catalog",
   },
 ]
 

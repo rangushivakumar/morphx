@@ -5,10 +5,9 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Check } from "lucide-react"
 
 const projectTypes = [
-  "Hospital / Healthcare",
-  "Restaurant / Hospitality",
-  "Commercial Kitchen",
-  "Office / Workspace",
+  "Hospitality Furniture",
+  "Restaurant Furniture",
+  "Cabinets & Countertops",
   "Other",
 ]
 
