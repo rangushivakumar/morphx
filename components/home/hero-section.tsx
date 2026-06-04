@@ -64,7 +64,7 @@ export function HeroSection() {
           <div className="mt-16 pt-8 border-t border-border/50 animate-fade-up opacity-0 animation-delay-600">
             <div className="flex flex-wrap items-center gap-8 lg:gap-12">
               <div>
-                <p className="text-3xl lg:text-4xl font-serif font-medium text-foreground">500+</p>
+                <p className="text-3xl lg:text-4xl font-serif font-medium text-foreground">50+</p>
                 <p className="text-sm text-muted-foreground mt-1">Projects</p>
               </div>
               <div className="h-12 w-px bg-border/50 hidden sm:block" />

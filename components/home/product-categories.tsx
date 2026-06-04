@@ -8,8 +8,8 @@ const categories = [
   {
     id: "hospitality",
     title: "Hospitality Furniture",
-    description: "Commercial healthcare furnishings engineered for modern medical environments, supporting patient comfort, and long-term performance.",
-    image: "https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=1200&auto=format&fit=crop",
+    description: "Thoughtfully crafted furniture for hotels, lounges, restaurants and hospitality venues.",
+    image: "https://images.unsplash.com/photo-1546967900-1bea5f16b69d?q=80&w=1200&auto=format&fit=crop",
     href: "/products#product-catalog",
   },
   {
