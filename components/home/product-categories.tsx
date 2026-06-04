@@ -8,8 +8,8 @@ const categories = [
   {
     id: "hospitality",
     title: "Hospitality Furniture",
-    description: "Clinical ICU beds, bedside lockers, adjustable overbed tables, and diagnostic examination seating.",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop",
+    description: "Commercial healthcare furnishings engineered for modern medical environments, supporting patient comfort, and long-term performance.",
+    image: "https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=1200&auto=format&fit=crop",
     href: "/products#product-catalog",
   },
   {
