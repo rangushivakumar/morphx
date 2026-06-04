@@ -21,8 +21,8 @@ const categories = [
   },
   {
     id: "cabinets",
-    title: "Cabinets & Countertops",
-    description: "Kitchen, bathroom, office & closet cabinetry with quartz countertops",
+    title: "Residential Fixtures and Furniture",
+    description: "Custom furniture, cabinetry, and interior fixtures designed for kitchens, bedrooms, living spaces.",
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1200&auto=format&fit=crop",
     href: "/products#product-catalog",
   },
